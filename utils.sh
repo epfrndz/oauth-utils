@@ -9,19 +9,19 @@ function decode_jwt_payload() {
   echo "$decoded_payload"
 }
 
-[ -z "$2" ]
+if [ -z "$2" ]
 then
   echo "Error: need second argument"
   exit 1
 fi
 
-[ "$1" = "urldecode" ]
+if [ "$1" = "urldecode" ]
 then
   echo $(urldecode $(echo "$2"))
   exit 0
 fi
 
-[ "$1" = "getjwtpayload" ]
+if [ "$1" = "getjwtpayload" ]
 then
   echo $(decode_jwt_payload $(echo "$2"))
   exit 0
