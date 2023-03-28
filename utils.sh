@@ -13,18 +13,21 @@ if [ -z "$2" ]
 then
   echo "Error: need second argument"
   exit 1
+else
 fi
 
 if [ "$1" = "urldecode" ]
 then
   echo $(urldecode $(echo "$2"))
   exit 0
+else
 fi
 
 if [ "$1" = "getjwtpayload" ]
 then
   echo $(decode_jwt_payload $(echo "$2"))
   exit 0
+else
 fi
 
 echo "Error: incorrect first argument. Pass either 'urldecode' or 'getjwtpayload'"
